@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>parallax website</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">home</a></li>
+            <li><a href="#">serviços</a></li>
+            <li><a href="#">sobre</a></li>
+            <li><a href="#">contatos</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="./img/stars.png" id="stars">
+        <img src="./img/moon.png" id="moon">
+        <img src="./img/mountains_behind.png" id="mountains_behind">
+        <h2 id="text">Lua cheia</h2>
+        <a href="#sec" id="btn">Explorar</a>
+        <img src="./img/front.png"  id="front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Nasa</h2>
+        <p>
+            A Lua é um corpo celeste localizado no Sistema Solar, mais precisamente nas proximidades da Terra, sendo o único satélite natural desse planeta. Há diversas teorias que explicam a formação lunar, no geral, derivadas de outros processos que geraram os demais corpos celestes, inclusive a próprio planeta Terra.A Lua possui algumas características semelhantes às da Terra, como a sua composição em três grandes camadas. Uma outra característica da Lua é a sua superfície formada por crateras constituídas pela queda de corpos celestes diversos. Ela possui quatro fases e é objeto de estudos científicos diversos, tendo também uma relação muita próxima com a Terra, influenciando a esfera terrestre por meio do seu campo gravitacional.
+            Há um conjunto de teorias astronômicas que tentam explicar a formação da Lua. Uma das principais teorias aceitas indica que esse satélite natural teria se formado com o Sistema Solar, mais especificamente por meio da matéria cósmica que ficou disposta a partir da consolidação da esfera terrestre. Sendo assim, conforme essa teoria, as formações da Terra e da Lua estão imbricadas, sendo originárias de processos astronômicos muito antigos.<br></br>Os estudos sobre a Lua avançaram muito ao longo dos anos, especialmente por meio do desenvolvimento de novas tecnologias que possibilitaram avanços no campo da astronomia. A Lua é o único satélite natural que já foi visitado pelo ser humano, por meio de uma ação espacial estadunidense realizada pela Nasa (National Aeronautics and Space Administration) em 1969, com o astronauta Neil Armstrong, o primeiro homem a pisar na superfície da Lua.<br></br>Quais as fases da Lua?
+            A Lua tem quatro fases, que apresentam características distintas, conforme a sua ocorrência. São elas: fase  Lua crescente: também chamada de quarto crescente, tem como característica a vista parcial da Lua do ponto de vista terrestre, como um semicírculo.
+            Lua cheia: ocorre em razão do posicionamento terrestre, entre o Sol e a Lua, que permite ver a Lua totalmente iluminada.
+            
+            Lua minguante: também chamada de quarto minguante, tem como característica a formação de um semicírculo do lado oposto ao quarto crescente.
+            
+            Lua nova: é caracterizada pela iluminação da Lua somente do lado oposto ao visível na Terra. Portanto, nessa não é possível ver a Lua a olho nu do planeta Terra.
+
+            
+          </p>
+    </div>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let front = document.getElementById('front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function(){
+         let value =window.scrollY;
+         stars.style.left = value *0.25 + 'px';
+         moon.style.top = value * 1.05 + 'px';
+         mountains_behind.style.top = value * 0.05 + 'px';
+         front.style.top = value * 0 + 'px';
+         text.style.marginright = value * 4 + 'px';
+         text.style.margintop = value * 1.5 + 'px';
+         btn.style.margintop = value * 1.5 + 'px';
+         header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+</html>
